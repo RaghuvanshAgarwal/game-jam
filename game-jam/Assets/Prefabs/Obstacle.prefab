@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3015233645772450093}
   - component: {fileID: 3015233645772450092}
   - component: {fileID: 3015233645772450099}
+  - component: {fileID: 7177325818671856471}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -58,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.63498485, y: 0.5312469}
   m_EdgeRadius: 0
 --- !u!114 &3015233645772450099
 MonoBehaviour:
@@ -73,6 +74,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inflictingDamage: 20
+--- !u!114 &7177325818671856471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015233645772450098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467039aefe111d840b6b8e3dd3c91ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHeath: 20
 --- !u!1 &3015233646909320131
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -922096271
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30ebad0a773117747a52dfa532b25179, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 001910769732b8847908d6f1b9e9ab1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4743676664819613436}
   - component: {fileID: 4743676664819613437}
   - component: {fileID: 4743676664819613409}
+  - component: {fileID: 8678163699298774702}
   m_Layer: 0
   m_Name: MotherEnemy
   m_TagString: Untagged
@@ -80,6 +81,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
+--- !u!114 &8678163699298774702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743676664819613438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467039aefe111d840b6b8e3dd3c91ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHeath: 20
 --- !u!1 &4743676666209780558
 GameObject:
   m_ObjectHideFlags: 0
