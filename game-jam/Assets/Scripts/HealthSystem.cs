@@ -37,7 +37,7 @@ public class HealthSystem : MonoBehaviour
 
     private bool IsDead() => _currentHeath == 0;
     private int GetCurrentHeath() => _currentHeath;
-    private float GetCurrentHeathNormalized() => _currentHeath / (float)_maxHeath;
+    public float GetCurrentHeathNormalized() => _currentHeath / (float)_maxHeath;
     private void RefillHeath()
     {
         _currentHeath = _maxHeath;
