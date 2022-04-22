@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
         if (IsGround())
         {
             playerVelocity.x = _horizontalInput * _horizontalSpeed;
-            HandleRotation();
+            if(Mathf.Abs(_horizontalInput) > 0)
+            {
+                HandleRotation();
+            }
         }
         if (_jumping)
         {
@@ -53,9 +56,10 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.velocity = playerVelocity;
     }
 
+    Collider2D[] colliders;
     private bool IsGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(_checkTransform.position, new Vector2(_checkWidth, _checkHeight),0f, _groundLayer);
+        colliders = Physics2D.OverlapBoxAll(_checkTransform.position, new Vector2(_checkWidth, _checkHeight),0f, _groundLayer);
         return colliders.Length > 0;
     }
 

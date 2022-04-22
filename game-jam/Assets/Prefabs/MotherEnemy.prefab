@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4743676664819613410}
-  - component: {fileID: 4743676664819613411}
   - component: {fileID: 4743676664819613436}
   - component: {fileID: 4743676664819613437}
   - component: {fileID: 4743676664819613409}
@@ -36,22 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4743676664819613411
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743676664819613438}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 13.774359
 --- !u!114 &4743676664819613436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnRate: 1
   _pfEnemy: {fileID: 3038338136997562444, guid: 34104ceabc9a141409c4dfa016334e30, type: 3}
+  radius: 0
 --- !u!114 &4743676664819613437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a5de4e3ffd3c54198696208793a47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 50
+  _damageAmount: 20
+  radius: 0
 --- !u!58 &4743676664819613409
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -165,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -922096271
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

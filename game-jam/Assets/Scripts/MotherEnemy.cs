@@ -6,38 +6,32 @@ public class MotherEnemy : MonoBehaviour
 {
     [SerializeField] float _spawnRate = 1;
     [SerializeField] GameObject _pfEnemy;
-    private bool _isInsideSphere = false;
+    [SerializeField] float radius;
 
-    private void OnEnable()
+    private float _currTime;
+    private PlayerController playerController;
+
+    public void Start()
     {
-        
+        playerController = Global.Instance.GetPlayerController();
+        _currTime = 0;
+    }
+    private void Update()
+    {
+        if(Vector3.Distance(playerController.transform.position, transform.position) < radius)
+        {
+            if(_currTime > _spawnRate)
+            {
+                _currTime = 0;
+                Vector2 _spawnPoint = (Vector2)transform.position + (Random.insideUnitCircle * 10);
+                Instantiate(_pfEnemy, _spawnPoint, Quaternion.identity);
+            }
+        }
+        _currTime += Time.deltaTime;
     }
 
-    IEnumerator SpawnEnemyCoroutine()
+    private void OnDrawGizmos()
     {
-        while (_isInsideSphere)
-        {
-            yield return new WaitForSeconds(_spawnRate);
-            Vector2 _spawnPoint = (Vector2)transform.position + (Random.insideUnitCircle * 10);
-            Instantiate(_pfEnemy, _spawnPoint, Quaternion.identity);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.TryGetComponent(out PlayerController controller))
-        {
-            _isInsideSphere = true;
-            StartCoroutine(SpawnEnemyCoroutine());
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent(out PlayerController controller))
-        {
-            _isInsideSphere = false;
-            StopCoroutine(SpawnEnemyCoroutine());
-        }
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
