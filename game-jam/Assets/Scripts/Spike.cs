@@ -9,7 +9,8 @@ public class Spike : MonoBehaviour
     {
         if(collision.TryGetComponent(out PlayerController controller))
         {
-            _obstacleRigibbody.isKinematic = false;
+            if(_obstacleRigibbody != null)
+                _obstacleRigibbody.isKinematic = false;
         }
     }
 }

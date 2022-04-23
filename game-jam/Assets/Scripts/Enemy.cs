@@ -24,6 +24,16 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(playerController.transform.position, transform.position) < radius)
         {
+            float xDiff = transform.position.x - playerController.transform.position.x;
+            if(xDiff > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            }
             Vector3 moveDir = (playerController.transform.position - transform.position).normalized;
             transform.position += moveDir * 5 * Time.deltaTime;
         }

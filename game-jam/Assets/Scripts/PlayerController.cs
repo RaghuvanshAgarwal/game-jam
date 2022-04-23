@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -99,6 +100,14 @@ public class PlayerController : MonoBehaviour
             Gizmos.DrawWireCube(_checkTransform.position, new Vector3(_checkWidth, _checkHeight, 1));
         }
     }
-    
-    
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }
